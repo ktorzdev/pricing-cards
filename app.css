@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #008DAC;
+  --borderBlue: #027c97;
+  --light: #F0F0F0;
+  --borderLight: #e4e4e4;
+  --black: #000000;
+  --dark: #1E1E1E;
+  --emphasis: #E46E00;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  width: 1216px;
+  height: 100%;
+}
+
+.box {
+  display: grid;
+  width: 384px;
+  padding: 32px;
+  background-color: var(--light);
+  border-radius: 4px;
+  border: solid 1px var(--borderLight);
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.box-header .title-card .title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 37px;
+}
+
+.box-header .price-card .price {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 37px;
+  color: var(--blue);
+}
+
+.price-card .price span {
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--black);
+}
+
+.box-body {
+  display: grid;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+
+.box-body ul li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--dark);
+}
+
+.box-body ul li i {
+  color: var(--blue);
+}
+
+.box-action {
+  display: flex;
+  align-items: center;
+}
+
+.box-action button {
+  width: 320px;
+  height: 68px;
+
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 37px;
+  color: var(--dark);
+  background-color: var(--blue);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.box-action button:hover {
+  opacity: .9;
+  color: var(--black);
+  transition: .2s;
+}
+
+
+/* Emphasis */
+
+.box-emphasis {
+  display: grid;
+  width: 384px;
+  padding: 32px;
+  background-color: var(--blue);
+  border-radius: 4px;
+  border: solid 1px var(--borderBlue);
+  position: relative;
+}
+
+.box-header-emphasis {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.box-header-emphasis .title-card .title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 37px;
+}
+
+.box-header-emphasis .price-card .price {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 37px;
+  color: var(--light);
+}
+
+.box-body-emphasis ul li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--dark);
+}
+
+.box-body-emphasis ul li i {
+  color: var(--light);
+}
+
+.box-action-emphasis {
+  display: flex;
+  align-items: center;
+}
+
+.box-action-emphasis button {
+  width: 320px;
+  height: 68px;
+
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 37px;
+  color: var(--dark);
+  background-color: var(--light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.box-action-emphasis button:hover {
+  opacity: .9;
+  color: var(--black);
+  transition: .2s;
+}
+
+.box-emphasis::before {
+  content: "Melhor Opção";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: var(--emphasis);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: bold;
+  top: -20px;
+}
+
+/* Transition */
+.box:hover {
+  border-color: var(--borderBlue);
+  transform: scale(1.05);
+}
+
+.box {
+  transition: border 300ms;
+  transition: transform 300ms;
+  animation: appear 400ms backwards;
+}
+
+.box-emphasis:hover {
+  border-color: var(--dark);
+  transform: scale(1.05);
+}
+
+.box-emphasis {
+  transition: border 300ms;
+  transition: transform 300ms;
+  animation: appear 400ms backwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
